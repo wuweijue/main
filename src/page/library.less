@@ -1,0 +1,42 @@
+.library {
+    flex: 1;
+    padding: 20px;
+}
+
+.dark .library {
+    // background-color: #2E2E30;
+    // background-color: #23272F;
+    background-color: #0D0D10;
+
+
+    .ant-table-wrapper {
+
+        * {
+            border: none;
+            color: #888888;
+            background-color: #0D0D10;
+        }
+
+        .ant-table-tbody {
+            .ant-table-cell {
+                color: white;
+            }
+
+            tr {
+                cursor: pointer;
+                border-collapse: collapse;
+                
+                td {
+                    background: none;
+                    border-radius: 8px;
+                }
+
+                &:hover {
+                    td {
+                       background-color: #29292C;
+                    }
+                }
+            }
+        }
+    }
+}

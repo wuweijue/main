@@ -1,8 +1,26 @@
-html, body, #root {
+* {
+    box-sizing: border-box;
+}
+
+html,
+body,
+#root {
     height: 100%;
     padding: 0;
     margin: 0;
 }
-.app {
+
+.app,
+.theme {
     height: 100%;
+}
+
+.theme {
+    display: flex;
+    flex-direction: column;
+    .body {
+        flex: 1;
+        height: 0;
+        display: flex;
+    }
 }

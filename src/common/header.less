@@ -1,8 +1,211 @@
-.header{
-    position: absolute;
-    top: 0;
+.header {
     height: 68px;
     width: 100%;
     background: rgba(31, 49, 64, 0.6);
-    z-index: 10;
+    display: flex;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+
+    .left {
+        display: flex;
+        align-items: center;
+        height: 100%;
+    
+        .title {
+            padding: 20px;
+            width: 220px;
+            height: 100%;
+            display: flex;
+            align-items: center;
+
+            .logo {
+                height: 52px;
+                width: 52px;
+                border-radius: 50%;
+                background-image: url(../static/image/logo1.jpg);
+                margin-right: 16px;
+                background-size: 115%;
+                cursor: pointer;
+            }
+        }
+
+        .routes {
+            display: flex;
+            height: 36px;
+
+            .header-item {
+                cursor: pointer;
+                margin-right: 4px;
+                background: none;
+                font-size: 18px;
+                border: none;
+                padding: 0px 12px;
+                border-radius: 10px;
+
+                .iconfont {
+                    font-size: 24px;
+                }
+            }
+        }
+    }
+
+
+    .right {
+        display: flex;
+        padding: 0 20px;
+
+        .header-search {
+            cursor: pointer;
+            width: 240px;
+            height: 40px;
+            border-radius: 24px;
+            margin-right: 12px;
+            display: flex;
+            align-items: center;
+            padding: 0 16px;
+            font-size: 16px;
+
+            .icon-search {
+                font-size: 22px;
+                margin-right: 6px;
+            }
+        }
+
+        .header-control {
+            display: flex;
+
+            .round-wrapper {
+                cursor: pointer;
+                display: flex;
+                height: 40px;
+                width: 40px;
+                border-radius: 50%;
+                justify-content: center;
+                // background-color: rgba(38, 38, 41, 1);
+                align-items: center;
+                // color: rgb(208, 210, 212);
+                // background-color: ;
+            }
+
+            .modeControl {
+                margin-right: 12px;
+            }
+
+            .languageControl {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 18px;
+            }
+        }
+    }
+}
+
+.dark .header {
+    // background-color: rgba(23, 23, 26, 1);
+    background-color: rgba(0, 0, 0, 0.95);
+
+    .left {
+        display: flex;
+
+        .title {
+            background-color: #2E2E30;
+
+            .title-span {
+                color: white;
+            }
+            .logo {
+                background-image: url(../static/image/logo1.jpg);
+            }
+
+        }
+
+        .routes {
+            padding: 0 20px;
+            .header-item {
+                color: rgba(180, 180, 180, 1);
+
+                &.selected {
+                    color: white;
+                    background-color: rgba(38, 38, 41, 1);
+                }
+            }
+        }
+    }
+
+    .round-wrapper {
+        background-color: rgba(38, 38, 41, 1);
+        color: white;
+
+        &:hover {
+            background-color: rgb(54, 54, 55);
+        }
+    }
+
+    .header-search {
+        background-color: rgba(38, 38, 41, 1);
+        color: white;
+
+        &:hover {
+            background-color: rgb(54, 54, 55);
+        }
+    }
+
+    .header-control {
+        .modeControl .iconfont {
+            color: white;
+        }
+
+        .languageControl {
+            color: white;
+        }
+    }
+}
+
+.languageControl-dropdown {
+    background-color: white;
+    border-radius: 4px;
+    padding: 16px;
+    color: black;
+    // box-shadow: 2px 2px 1px 1px rgba(0, 0, 0, 0.8);
+
+    .list-item {
+        width: 100%;
+        background: none;
+        margin-top: 4px;
+        border: none;
+        display: block;
+        border-radius: 4px;
+        padding: 4px 10px;
+        text-align: left;
+
+        &:first-of-type {
+            margin-top: 0;
+        }
+
+        cursor: pointer;
+        font-size: 15px;
+        // font-weight: bolder;
+
+        .anticon-check {
+            margin-right: 6px;
+            font-size: 12px;
+        }
+
+
+    }
+
+    &.dark {
+        background-color: rgba(38, 38, 41, 1);
+
+        .list-item {
+            color: white;
+
+            &:hover {
+                background-color: rgb(54, 54, 55);
+            }
+        }
+
+    }
 }

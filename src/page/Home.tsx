@@ -1,14 +1,16 @@
 import React from 'react';
+import { useTranslate, Span } from 'useTranslate'; 
 import './home.less';
 
-const Home = ()=>{
+const Home = () => {
     return <div className="home">
-       <div className="home-bottom">
+        <div className='content'></div>
+        <div className="home-bottom">
             <div className='button'>
                 <div className="glow"></div>
-                <span>启程</span>
+                <Span>{useTranslate('启程')}</Span>
             </div>
-       </div>
+        </div>
     </div>
 }
 
