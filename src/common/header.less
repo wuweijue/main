@@ -11,7 +11,7 @@
         display: flex;
         align-items: center;
         height: 100%;
-    
+
         .title {
             padding: 20px;
             width: 220px;
@@ -34,6 +34,10 @@
             display: flex;
             height: 36px;
 
+            .back {
+                margin-right: 12px;
+            }
+
             .header-item {
                 cursor: pointer;
                 margin-right: 4px;
@@ -48,6 +52,19 @@
                 }
             }
         }
+    }
+
+    .round-wrapper {
+        cursor: pointer;
+        display: flex;
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+        justify-content: center;
+        // background-color: rgba(38, 38, 41, 1);
+        align-items: center;
+        // color: rgb(208, 210, 212);
+        // background-color: ;
     }
 
 
@@ -72,21 +89,12 @@
             }
         }
 
+
+
         .header-control {
             display: flex;
 
-            .round-wrapper {
-                cursor: pointer;
-                display: flex;
-                height: 40px;
-                width: 40px;
-                border-radius: 50%;
-                justify-content: center;
-                // background-color: rgba(38, 38, 41, 1);
-                align-items: center;
-                // color: rgb(208, 210, 212);
-                // background-color: ;
-            }
+
 
             .modeControl {
                 margin-right: 12px;
@@ -115,6 +123,7 @@
             .title-span {
                 color: white;
             }
+
             .logo {
                 background-image: url(../static/image/logo1.jpg);
             }
@@ -122,7 +131,11 @@
         }
 
         .routes {
+
+
+
             padding: 0 20px;
+
             .header-item {
                 color: rgba(180, 180, 180, 1);
 

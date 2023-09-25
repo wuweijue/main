@@ -2,7 +2,7 @@ import React from 'react';
 import './header.less';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { Dropdown } from 'antd';
-import { CheckOutlined } from '@ant-design/icons';
+import { CheckOutlined, LeftOutlined } from '@ant-design/icons';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectLanguage, headerStateType, Language, switchMode } from '@store/headerReducer';
 import { Reducers } from '@store/store'
@@ -112,6 +112,13 @@ const Header = () => {
                 <div className="title-span">Jade.WWJ</div>
             </div>
             <div className="routes">
+                <div className='round-wrapper back' onClick={()=>{
+                    let pathname = location.pathname;
+                    let newPath = pathname.split('/').slice(0, -1).join('/')
+                    navigate(newPath)
+                }}>
+                    <LeftOutlined />
+                </div>
                 {
                     routes.map(item => {
                         return <button onClick={() => handleSelect(item)} className={classnames("header-item", {
