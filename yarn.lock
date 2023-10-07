@@ -1091,6 +1091,13 @@ import-html-entry@^1.14.6:
   dependencies:
     "@babel/runtime" "^7.7.2"
 
+import-html-entry@^1.15.1:
+  version "1.15.1"
+  resolved "https://registry.npmjs.org/import-html-entry/-/import-html-entry-1.15.1.tgz#7b6410f3c9fdb15745415e78df109f1a8bb53ed9"
+  integrity sha512-flVVS3lQTaHUUEF/zByio0WHdJRMNwT/1sI48/ps9VVGWNn+oE1wuX+fBRZkXLKAeggVVmfU41MpgNnZ7I9nRg==
+  dependencies:
+    "@babel/runtime" "^7.7.2"
+
 inline-style-parser@0.1.1:
   version "0.1.1"
   resolved "https://registry.npmjs.org/inline-style-parser/-/inline-style-parser-0.1.1.tgz#ec8a3b429274e9c0a1f1c4ffa9453a7fef72cea1"

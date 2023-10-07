@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './header.less';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { Dropdown } from 'antd';
@@ -9,6 +9,7 @@ import { Reducers } from '@store/store'
 import { useTranslation } from 'react-i18next';
 import { Span } from 'useTranslate';
 import classnames from 'classnames';
+import actions from '../qiankun'
 
 type routeType = {
     path: any;
@@ -35,14 +36,29 @@ const Control = () => {
         (state: Reducers) => state.header,
     );
     const { i18n } = useTranslation();
+
     const handleSelectLanguage = (key: Language) => {
         if (language === key) return
         dispatch(selectLanguage(key));
         i18n.changeLanguage(key)
     }
+
+    const handleSwitchTheme = ()=>{
+        const value = mode === 'light' ? 'dark' : 'light'
+        dispatch(switchMode(value));
+        actions.setGlobalState({
+            theme: value
+        })
+        window.localStorage.setItem('theme', value)
+    }
+
+    useEffect(()=>{
+        window.localStorage.setItem('theme', mode)
+    })
+
     return <div className="header-control">
         <div className='modeControl'>
-            <div className='round-wrapper' onClick={() => dispatch(switchMode(mode === 'light' ? 'dark' : 'light'))}>
+            <div className='round-wrapper' onClick={handleSwitchTheme}>
                 {mode === 'light' ? <i className='iconfont icon-light'></i> : <i className='iconfont icon-dark'></i>}
             </div>
         </div>

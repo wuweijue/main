@@ -12,7 +12,11 @@ export default defineConfig({
     ],
     server: {
         port: 4000,
-        open: true
+        open: true,
+        headers: {
+            'Access-Control-Allow-Origin': '*', // 允许来自任何源的请求  
+            'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, PATCH, OPTIONS', // 允许的 HTTP 方法  
+        },
     },
     build: {
         rollupOptions: {

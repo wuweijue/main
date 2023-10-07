@@ -6,8 +6,6 @@ export const useTranslate = (content: string) => {
     const { t } = useTranslation();
     // const state: string = useMemo(() => t(content), []);
     const state: string =  t(content);
-
-   
     return state
 }
 

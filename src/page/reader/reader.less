@@ -3,12 +3,14 @@
     flex: 1;
     padding: 20px 0px 20px 20px;
     display: flex;
+    justify-content: space-between;
 
     .reader {
         overflow-y: auto;
         max-width: 960px;
         padding-right: 20px;
-        width: 400px;
+        // width: 400px;
+
         img {
             max-width: 100%;
             border-radius: 4px;
@@ -60,6 +62,10 @@
             margin: 28px 0 14px 0;
         }
 
+        h5 {
+            margin: 24px 0 12px 0;
+        }
+
         pre {
             border-radius: 6px;
             padding: 12px 12px;
@@ -79,8 +85,9 @@
     }
 
     .reader-menu {
-        padding: 20px;
-        max-width: 400px;
+        padding: 0 20px 12px 0;
+        width: 400px;
+        
         h1,
         h2,
         h3,
@@ -88,22 +95,33 @@
         h5,
         h6 {
             font-size: 14px;
+            margin: 0px 0;
+            padding: 8px 0;
+            border-radius: 6px;
+
             a {
                 color: #F9F9F9;
-                &.active {
-                    background-color: #23272F;
-                }
             }
+
+            &.active {
+                background-color: #23272F;
+            }
+        }
+        
+        h2 {
+            padding-left: 12px;
         }
 
         h3 {
-            padding-left: 29px;
+            padding-left: 41px;
         }
+
         h4 {
-            padding-left: 57px;
+            padding-left: 69px;
         }
+
         h5 {
-            padding-left: 85px;
+            padding-left: 97px;
         }
     }
 }
@@ -154,19 +172,30 @@
 
     .reader-menu {
         overflow-y: auto;
+
         h1,
         h2,
         h3,
         h4,
         h5,
         h6 {
-            a {
-                color: #F9F9F9;
-                &.active {
-                    background-color: #23272F;
+            &.active {
+                background-color: #23272F;
+
+                a {
+                    color: #F9F9F9;
                 }
+            }
+            a {
+                color: #b4b4b4;
             }
         }
 
     }
+}
+
+@media screen and (max-width: 960px) {  
+    .reader-menu {  
+        display: none;  
+    }  
 }

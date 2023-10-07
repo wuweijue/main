@@ -13,22 +13,18 @@ const columns = [{
 }]
 
 const Library = () => {
-    const [state, setState] = useState(false);
     const location = useLocation();
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+
     const { bookList } = useSelector(
         (state: Reducers) => state.library,
     );
 
-    const dispatch = useDispatch();
-
     useEffect(() => {
         dispatch(setBookList({ pathname: location.pathname }))
-        setTimeout(() => {
-            setState(true)
-        }, 1000)
     }, [location.pathname]);
-
-    const navigate = useNavigate();
+ 
     const handleSelect = (item: Book) => {
         if (item.title === location.pathname) {
             return
@@ -37,25 +33,21 @@ const Library = () => {
     }
 
     return <div className="library">
-        {
-            state ? <Table
-                onRow={(record)=>{
-                    return {
-                        onClick: ()=>{
-                            handleSelect(record)
-                        }
+        <Table
+            onRow={(record) => {
+                return {
+                    onClick: () => {
+                        handleSelect(record)
                     }
-                }}
-                sticky={true}
-                rowKey={record => record.title}
-                columns={columns}
-                dataSource={bookList}
-                bordered={false}
-                pagination={false}
-                // scroll={{y:500}}
-
-            /> : <Skeleton active={true} round={true} />
-        }
+                }
+            }}
+            sticky={true}
+            rowKey={record => record.title}
+            columns={columns}
+            dataSource={bookList}
+            bordered={false}
+            pagination={false}
+        />
     </div>
 }
 

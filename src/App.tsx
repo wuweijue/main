@@ -1,6 +1,6 @@
 import React, { Profiler, StrictMode } from 'react';
 import Router from './router/Router';
-import { Provider } from 'react-redux';
+import { Provider, useSelector } from 'react-redux';
 import { I18nextProvider, initReactI18next } from 'react-i18next';
 import i18n from 'i18next';
 import XHR from 'i18next-xhr-backend';

@@ -10,6 +10,8 @@ import { ConfigProvider } from 'antd';
 import { headerStateType } from '@store/headerReducer';
 import { useSelector } from 'react-redux';
 import Reader from '../page/reader/Reader';
+import '../qiankun';
+import Component from '../page/component';
 
 const languageMap = {
     'zh-CN': zhCN,
@@ -46,6 +48,7 @@ const AppRouter = () => {
            
                             </Route>
                         </Route>
+                        <Route path='/components/:id/' element={<Component />} />
                         {/* <Route path='*' element={<Navigate to='/home' />} /> */}
                     </Routes>
                 </div>
